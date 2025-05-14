@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accessible Clickable Element (Keyboard + Screen Reader Friendly)</title>
+  <style>
+    .clickable-box {
+      cursor: pointer;
+      padding: 20px;
+      border: 2px solid #007BFF;
+      border-radius: 8px;
+      background-color: #f0f8ff;
+      transition: background-color 0.3s;
+      outline: none;
+      
+    }
+
+    .clickable-box:hover,
+    .clickable-box:focus {
+      background-color: #d6eaff;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.4);
+    }
+
+    ul.inline-list {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 10px 10px 10px 10px;
+      left:  40%;
+      position: relative;
+    }
+
+    ul.inline-list li {
+      margin-right: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="clickable-box" role="button" tabindex="0"
+       aria-label="Visit my GitHub profile"
+       onclick="window.location.href='https://github.com/Haninkhdour963';"
+       onkeydown="handleKey(event)">
+    <h2>Learn More About Me</h2>
+    <p>Clicking this box (or pressing Enter/Space) takes you to my GitHub profile</p>
+    <ul class="inline-list">
+      <li onclick="https://haninkhdour963.github.io/about">About</li>
+      <li onclick="https://haninkhdour963.github.io/projects">Projects</li>
+      <li onclick="https://haninkhdour963.github.io/contact">Contact Me</li>
+    </ul>
+  </div>
+
+  <script>
+    function handleKey(event) {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        event.currentTarget.click();
+      }
+    }
+  </script>
+
+</body>
+</html>
