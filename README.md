@@ -1,4 +1,4 @@
-# Accessible-Clickable-Card-Component
+
 # 🔗 Accessible Clickable Card Component
 
 A fully accessible and keyboard-friendly clickable component built with pure HTML, CSS, and JavaScript. This interactive card element is designed to mimic the behavior of a button or link, while maintaining excellent usability for screen readers and keyboard navigation.
